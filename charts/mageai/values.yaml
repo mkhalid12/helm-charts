@@ -74,6 +74,10 @@ tolerations: []
 
 affinity: {}
 
+volumeMounts:
+  - name: mage-fs
+    mountPath: /home/src
+
 volumes:
   - name: mage-fs
     hostPath:
@@ -84,3 +88,4 @@ env:
     valueFrom:
       fieldRef:
         fieldPath: metadata.namespace
+
